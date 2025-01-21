@@ -1,0 +1,41 @@
+﻿# Archivos generados por Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+Archivos de build
+bin/
+obj/
+out/
+
+Archivos de publicación
+publish/
+*.publishsettings
+
+Configuración de paquetes y dependencias
+*.nupkg
+*.snupkg
+packages/
+*.dll
+*.exe
+*.log
+
+Configuración de seguridad
+*.pfx
+*.key
+Secrets/
+
+Archivos de configuración locales
+appsettings.Development.json
+
+Archivos específicos de IDEs
+.idea/
+*.swp
+*.bak
+*.orig
+
+Configuración de Git
+*.orig
+*.rej
