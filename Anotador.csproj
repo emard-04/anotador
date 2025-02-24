@@ -68,10 +68,34 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="AnotadorJuego.aspx" />
+    <Content Include="AnotadorNormal.aspx" />
+    <Content Include="Inicio.aspx" />
     <Content Include="Truco.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnotadorJuego.aspx.cs">
+      <DependentUpon>AnotadorJuego.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnotadorJuego.aspx.designer.cs">
+      <DependentUpon>AnotadorJuego.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnotadorNormal.aspx.cs">
+      <DependentUpon>AnotadorNormal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnotadorNormal.aspx.designer.cs">
+      <DependentUpon>AnotadorNormal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Truco.aspx.cs">
       <DependentUpon>Truco.aspx</DependentUpon>

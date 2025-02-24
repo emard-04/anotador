@@ -11,7 +11,7 @@ namespace Anotador
 {
 
 
-    public partial class Truco
+    public partial class AnotadorNormal
     {
 
         /// <summary>
@@ -24,75 +24,57 @@ namespace Anotador
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control PuntosNos.
+        /// Control step1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PuntosNos;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl step1;
 
         /// <summary>
-        /// Control PuntosEll.
+        /// Control txtNumJugadores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PuntosEll;
+        protected global::System.Web.UI.WebControls.TextBox txtNumJugadores;
 
         /// <summary>
-        /// Control sum1.
+        /// Control btnContinuar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button sum1;
+        protected global::System.Web.UI.WebControls.Button btnContinuar;
 
         /// <summary>
-        /// Control res1.
+        /// Control step2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button res1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl step2;
 
         /// <summary>
-        /// Control sum2.
+        /// Control phJugadores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button sum2;
+        protected global::System.Web.UI.WebControls.PlaceHolder phJugadores;
 
         /// <summary>
-        /// Control res2.
+        /// Control btnGuardarNombres.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button res2;
-
-        /// <summary>
-        /// Control btnReiniciar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReiniciar;
-
-        /// <summary>
-        /// Control volver.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button volver;
+        protected global::System.Web.UI.WebControls.Button btnGuardarNombres;
     }
 }
