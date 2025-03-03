@@ -13,13 +13,10 @@
 <body>
     <form id="form1" runat="server">
         <div class="container text-center mt-5">
-            <h2>Anotador Juego</h2>
+            <h2 class="mb-4">Anotador de Juego</h2>
 
-            <!-- Mostrar los nombres de los jugadores -->
-            <div id="lblJugadores" runat="server"></div>
-
-            <!-- Mostrar los botones de puntuación aquí -->
-            <!-- Aquí van los controles de la puntuación como los botones, etc. -->
+            <!-- Tabla de jugadores -->
+            <asp:Table ID="tblJugadores" runat="server" CssClass="table table-bordered table-striped"></asp:Table>
         </div>
     </form>
 

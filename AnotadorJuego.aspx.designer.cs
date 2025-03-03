@@ -24,12 +24,12 @@ namespace Anotador
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lblJugadores.
+        /// Control tblJugadores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblJugadores;
+        protected global::System.Web.UI.WebControls.Table tblJugadores;
     }
 }
