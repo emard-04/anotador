@@ -25,11 +25,13 @@ namespace Anotador
                     TableRow row = new TableRow();
 
                     // Celda para el nombre del jugador
-                    TableCell cell1 = new TableCell();
-                    Label lblJugador = new Label();
-                    lblJugador.Text = jugador; // Nombre del jugador
-                    cell1.Controls.Add(lblJugador);
+                    TableCell cell1=new TableCell();
+                    TextBox txtNombre = new TextBox();
+                    txtNombre.ID = "txtNombre" + i;
+                    txtNombre.CssClass = "form-control";
+                    cell1.Controls.Add(txtNombre);
                     row.Cells.Add(cell1);
+                    
 
                     // Celda para el Puntaje 1
                     TableCell cell2 = new TableCell();
