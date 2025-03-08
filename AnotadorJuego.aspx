@@ -16,7 +16,19 @@
             <h2 class="mb-4">Anotador de Juego</h2>
 
             <!-- Tabla de jugadores -->
-            <asp:Table ID="tblJugadores" runat="server" CssClass="table table-bordered table-striped"></asp:Table>
+            <asp:Table ID="tblJugadores" runat="server" CssClass="table table-bordered table-striped">
+                <asp:TableHeaderRow>
+                    <asp:TableHeaderCell>Jugador</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Puntaje 1</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Puntaje 2</asp:TableHeaderCell>
+                    <asp:TableHeaderCell></asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Resultado</asp:TableHeaderCell>
+                </asp:TableHeaderRow>
+            </asp:Table>
+
+            <!-- Botón de Sumar -->
+            <br />
+            <asp:Button ID="btnVolver" runat="server" Text="Volver" OnClick="btnVolver_Click" CssClass="btn btn-success" />
         </div>
     </form>
 

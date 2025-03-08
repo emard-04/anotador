@@ -55,15 +55,22 @@ namespace Anotador
                 TextBox txtJugador = (TextBox)phJugadores.FindControl("txtJugador" + (i + 1));
                 if (txtJugador != null)
                 {
-                    nombresJugadores[i] = txtJugador.Text;
+                    nombresJugadores[i] = txtJugador.Text; // Guardar el nombre del jugador
                 }
+            }
+
+            // Verificar si los nombres están siendo guardados correctamente
+            foreach (string nombre in nombresJugadores)
+            {
+                Response.Write($"Nombre: {nombre}<br/>"); // Imprimir los nombres para depurar
             }
 
             // Guardar los nombres en la sesión
             Session["NombresJugadores"] = nombresJugadores;
-            foreach (var jugador in nombresJugadores)
+
+            foreach (string nombre in nombresJugadores)
             {
-                Response.Write($"Jugador: {jugador}<br/>");
+                Response.Write($"Nombre: {nombre}<br/>"); // Depurar
             }
 
             // Redirigir al siguiente formulario
