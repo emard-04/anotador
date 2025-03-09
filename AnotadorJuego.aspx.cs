@@ -9,63 +9,54 @@ namespace Anotador
 {
     public partial class AnotadorJuego : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
-            // Verificar si ya existen nombres de jugadores en la sesión
-            if (Session["NombresJugadores"] != null)
+            if (Session["NumJugadores"] != null)
             {
-                // Obtener los nombres de los jugadores desde la sesión
-                string[] nombresJugadores = (string[])Session["NombresJugadores"];
+                int numJugadores = (int)Session["NumJugadores"];
 
-                // Agregar una fila para cada jugador
-                for (int i = 0; i < nombresJugadores.Length; i++)
+                for (int i = 0; i < numJugadores; i++)
                 {
-                    string jugador = nombresJugadores[i];
-
                     TableRow row = new TableRow();
 
                     // Celda para el nombre del jugador
-                    TableCell cell1=new TableCell();
-                    TextBox txtNombre = new TextBox();
-                    txtNombre.ID = "txtNombre" + i;
-                    txtNombre.CssClass = "form-control";
+                    TableCell cell1 = new TableCell();
+                    TextBox txtNombre = new TextBox
+                    {
+                        ID = "txtNombre_" + i,
+                        CssClass = "form-control"
+                    };
+                    txtNombre.Attributes.Add("placeholder", "Nombre del jugador " + (i + 1));
                     cell1.Controls.Add(txtNombre);
                     row.Cells.Add(cell1);
-                    
 
-                    // Celda para el Puntaje 1
+                    // Celda para Puntaje 1
                     TableCell cell2 = new TableCell();
-                    TextBox txtPuntaje1 = new TextBox();
-                    txtPuntaje1.ID = "txtPuntaje1_" + i; // Usamos el índice como parte del ID para hacerlo único
-                    txtPuntaje1.CssClass = "form-control"; // Agregar clase de Bootstrap
+                    TextBox txtPuntaje1 = new TextBox { ID = "txtPuntaje1_" + i, CssClass = "form-control" };
                     cell2.Controls.Add(txtPuntaje1);
                     row.Cells.Add(cell2);
 
-                    // Celda para el Puntaje 2
+                    // Celda para Puntaje 2
                     TableCell cell3 = new TableCell();
-                    TextBox txtPuntaje2 = new TextBox();
-                    txtPuntaje2.ID = "txtPuntaje2_" + i; // Usamos el índice como parte del ID para hacerlo único
-                    txtPuntaje2.CssClass = "form-control"; // Agregar clase de Bootstrap
+                    TextBox txtPuntaje2 = new TextBox { ID = "txtPuntaje2_" + i, CssClass = "form-control" };
                     cell3.Controls.Add(txtPuntaje2);
                     row.Cells.Add(cell3);
 
-
-                    // Celda para el botón de calcular
+                    // Celda para Botón Calcular
                     TableCell cell4 = new TableCell();
-                    Button btnCalcular = new Button();
-                    btnCalcular.Text = "Calcular";
-                    btnCalcular.CommandArgument = i.ToString(); // Usamos el índice como argumento para identificar al jugador
-                    btnCalcular.CssClass = "btn btn-primary";
-                    btnCalcular.Click += btnCalcular_Click;
+                    Button btnCalcular = new Button
+                    {
+                        Text = "Calcular",
+                        CommandArgument = i.ToString(),
+                        CssClass = "btn btn-primary"
+                    };
+                    btnCalcular.Click += btnCalcular_Click; // Asegurar que el evento se asigne en cada postback
                     cell4.Controls.Add(btnCalcular);
                     row.Cells.Add(cell4);
 
-                    // Celda para el Resultado
-                    TableCell cell5= new TableCell();
-                    TextBox txtResultado = new TextBox();
-                    txtResultado.ID = "txtResultado_" + i; // Usamos el índice como parte del ID para hacerlo único
-                    txtResultado.CssClass = "form-control";
-                    txtResultado.ReadOnly = true; // Solo lectura
+                    // Celda para Resultado
+                    TableCell cell5 = new TableCell();
+                    TextBox txtResultado = new TextBox { ID = "txtResultado_" + i, CssClass = "form-control", ReadOnly = true };
                     cell5.Controls.Add(txtResultado);
                     row.Cells.Add(cell5);
 
@@ -75,7 +66,6 @@ namespace Anotador
             }
             else
             {
-                // Si no hay jugadores en la sesión, redirigir al formulario de entrada de jugadores
                 Response.Redirect("AnotadorNormal.aspx");
             }
         }
@@ -84,27 +74,27 @@ namespace Anotador
         protected void btnCalcular_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            int jugadorIndex = int.Parse(btn.CommandArgument); // Obtener el índice del jugador desde CommandArgument
+            int jugadorIndex = int.Parse(btn.CommandArgument);
 
-            // Obtener los TextBox correspondientes a Puntaje 1, Puntaje 2 y Resultado
+            // Buscar los controles en la tabla
             TextBox txtPuntaje1 = (TextBox)tblJugadores.FindControl("txtPuntaje1_" + jugadorIndex);
             TextBox txtPuntaje2 = (TextBox)tblJugadores.FindControl("txtPuntaje2_" + jugadorIndex);
             TextBox txtResultado = (TextBox)tblJugadores.FindControl("txtResultado_" + jugadorIndex);
 
-            try
+            if (txtPuntaje1 != null && txtPuntaje2 != null && txtResultado != null)
             {
-                // Sumar los puntajes
-                int puntaje1 = int.Parse(txtPuntaje1.Text);
-                int puntaje2 = int.Parse(txtPuntaje2.Text);
-                int resultado = puntaje1 + puntaje2;
+                try
+                {
+                    int puntaje1 = int.Parse(txtPuntaje1.Text);
+                    int puntaje2 = int.Parse(txtPuntaje2.Text);
+                    int resultado = puntaje1 + puntaje2;
 
-                // Mostrar el resultado en el TextBox de Resultado
-                txtResultado.Text = resultado.ToString();
-            }
-            catch (FormatException)
-            {
-                // Si no son números válidos, mostrar mensaje de error
-                Response.Write("<script>alert('Por favor ingresa puntajes válidos.');</script>");
+                    txtResultado.Text = resultado.ToString(); // Mostrar el resultado
+                }
+                catch (FormatException)
+                {
+                    Response.Write("<script>alert('Por favor ingresa puntajes válidos.');</script>");
+                }
             }
         }
 

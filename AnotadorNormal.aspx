@@ -40,13 +40,6 @@
                 <asp:TextBox ID="txtNumJugadores" runat="server" CssClass="form-control" TextMode="Number" Min="2" Max="10"></asp:TextBox>
                 <asp:Button ID="btnContinuar" runat="server" CssClass="btn btn-primary btn-custom mt-3" Text="Continuar" OnClick="btnContinuar_Click"/>
             </div>
-
-            <!-- Paso 2: Ingresar nombres de los jugadores -->
-            <div id="step2" runat="server" visible="false">
-                <h4 class="mt-3">Ingresa los nombres:</h4>
-                <asp:PlaceHolder ID="phJugadores" runat="server"></asp:PlaceHolder>
-                <asp:Button ID="btnGuardarNombres" runat="server" CssClass="btn btn-success btn-custom mt-3" Text="Guardar Nombres" OnClick="btnGuardarNombres_Click"/>
-            </div>
         </div>
     </form>
 
