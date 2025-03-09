@@ -70,6 +70,8 @@
     <Content Include=".gitignore" />
     <Content Include="AnotadorJuego.aspx" />
     <Content Include="AnotadorNormal.aspx" />
+    <Content Include="AnotadorNormal2.aspx" />
+    <Content Include="Generala.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="Truco.aspx" />
     <Content Include="Web.config" />
@@ -88,6 +90,20 @@
     </Compile>
     <Compile Include="AnotadorNormal.aspx.designer.cs">
       <DependentUpon>AnotadorNormal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnotadorNormal2.aspx.cs">
+      <DependentUpon>AnotadorNormal2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnotadorNormal2.aspx.designer.cs">
+      <DependentUpon>AnotadorNormal2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Generala.aspx.cs">
+      <DependentUpon>Generala.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Generala.aspx.designer.cs">
+      <DependentUpon>Generala.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

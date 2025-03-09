@@ -23,5 +23,10 @@ namespace Anotador
         {
             Response.Redirect("Truco.aspx"); // Redirige al anotador del Truco
         }
+
+        protected void btnGenerala_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AnotadorNormal2.aspx");
+        }
     }
 }

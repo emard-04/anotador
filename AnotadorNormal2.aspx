@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AnotadorNormal.aspx.cs" Inherits="Anotador.AnotadorNormal" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AnotadorNormal2.aspx.cs" Inherits="Anotador.AnotadorNormal2" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,7 +32,7 @@
 
     <form id="form1" runat="server">
         <div class="container">
-            <h2 class="mb-4">Anotador 1</h2>
+            <h2 class="mb-4">Anotador 2</h2>
 
             <!-- Paso 1: Ingresar número de jugadores -->
             <div id="step1" runat="server">

@@ -74,27 +74,31 @@ namespace Anotador
         protected void btnCalcular_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            int jugadorIndex = int.Parse(btn.CommandArgument);
+            int jugadorIndex = int.Parse(btn.CommandArgument); // Obtener el índice del jugador desde CommandArgument
 
-            // Buscar los controles en la tabla
+            // Obtener los TextBox correspondientes a Puntaje 1, Puntaje 2 y Resultado
             TextBox txtPuntaje1 = (TextBox)tblJugadores.FindControl("txtPuntaje1_" + jugadorIndex);
             TextBox txtPuntaje2 = (TextBox)tblJugadores.FindControl("txtPuntaje2_" + jugadorIndex);
             TextBox txtResultado = (TextBox)tblJugadores.FindControl("txtResultado_" + jugadorIndex);
 
-            if (txtPuntaje1 != null && txtPuntaje2 != null && txtResultado != null)
+            try
             {
-                try
-                {
-                    int puntaje1 = int.Parse(txtPuntaje1.Text);
-                    int puntaje2 = int.Parse(txtPuntaje2.Text);
-                    int resultado = puntaje1 + puntaje2;
+                // Sumar los puntajes
+                int puntaje1 = int.Parse(txtPuntaje1.Text);
+                int puntaje2 = int.Parse(txtPuntaje2.Text);
+                int resultado = puntaje1 + puntaje2;
 
-                    txtResultado.Text = resultado.ToString(); // Mostrar el resultado
-                }
-                catch (FormatException)
-                {
-                    Response.Write("<script>alert('Por favor ingresa puntajes válidos.');</script>");
-                }
+                // Mostrar el resultado en el TextBox de Resultado
+                txtResultado.Text = resultado.ToString();
+
+                // **Actualizar los valores para el próximo cálculo**
+                txtPuntaje1.Text = resultado.ToString(); // Guardar el resultado como nuevo puntaje 1
+                txtPuntaje2.Text = ""; // Limpiar el puntaje 2 para la próxima entrada
+            }
+            catch (FormatException)
+            {
+                // Si no son números válidos, mostrar mensaje de error
+                Response.Write("<script>alert('Por favor ingresa puntajes válidos.');</script>");
             }
         }
 

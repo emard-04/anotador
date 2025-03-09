@@ -11,7 +11,7 @@ namespace Anotador
 {
 
 
-    public partial class AnotadorNormal
+    public partial class AnotadorNormal2
     {
 
         /// <summary>

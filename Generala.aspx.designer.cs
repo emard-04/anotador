@@ -11,7 +11,7 @@ namespace Anotador
 {
 
 
-    public partial class AnotadorNormal
+    public partial class Generala
     {
 
         /// <summary>
@@ -24,39 +24,30 @@ namespace Anotador
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control step1.
+        /// Control tblGenerala.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl step1;
+        protected global::System.Web.UI.WebControls.Table tblGenerala;
 
         /// <summary>
-        /// Control txtNumJugadores.
+        /// Control btnCalcular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumJugadores;
+        protected global::System.Web.UI.WebControls.Button btnCalcular;
 
         /// <summary>
-        /// Control btnContinuar.
+        /// Control resultadoLista.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnContinuar;
-
-        /// <summary>
-        /// Control btnVolver.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVolver;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl resultadoLista;
     }
 }
